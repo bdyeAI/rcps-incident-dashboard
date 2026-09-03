@@ -1,23 +1,232 @@
 {
-  "schools": ["McHarg Elementary", "Belle Heth Elementary", "Dalton Intermediate", "Radford High"],
-  "months": ["August","September","October","November","December","January","February","March","April","May","June"],
-  "lastUpdated": "2026-09-02T00:00:00Z",
+  "schools": [
+    "McHarg Elementary",
+    "Belle Heth Elementary",
+    "Dalton Intermediate",
+    "Radford High"
+  ],
+  "months": [
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June"
+  ],
+  "lastUpdated": "2026-09-03T15:18:56.531198+00:00",
   "years": {
-    "25-26": {
-      "August":    { "district": 22, "schools": [0,12,1,11],  "categories":{"BAP":0,"BESO":0,"BSC":15,"BSO":6,"RB":1},  "flagged": false },
-      "September": { "district": 63, "schools": [18,12,20,25], "categories":{"BAP":8,"BESO":0,"BSC":25,"BSO":3,"RB":27}, "flagged": false },
-      "October":   { "district": 90, "schools": [28,46,39,58], "categories":{"BAP":13,"BESO":3,"BSC":30,"BSO":15,"RB":29},"flagged": false },
-      "November":  { "district": 56, "schools": [15,12,14,15], "categories":{"BAP":8,"BESO":1,"BSC":21,"BSO":10,"RB":16},"flagged": false },
-      "December":  { "district": 21, "schools": [4,5,3,9],     "categories":{"BAP":0,"BESO":1,"BSC":10,"BSO":5,"RB":5},  "flagged": true },
-      "January":   { "district": 20, "schools": [1,8,7,3],     "categories":{"BAP":0,"BESO":2,"BSC":5,"BSO":3,"RB":10},  "flagged": false },
-      "February":  { "district": 42, "schools": [6,6,14,16],   "categories":{"BAP":4,"BESO":1,"BSC":11,"BSO":8,"RB":18}, "flagged": false },
-      "March":     { "district": 45, "schools": [8,15,11,12],  "categories":{"BAP":3,"BESO":6,"BSC":11,"BSO":15,"RB":10},"flagged": false },
-      "April":     { "district": 36, "schools": [8,4,7,17],    "categories":{"BAP":0,"BESO":4,"BSC":14,"BSO":4,"RB":14}, "flagged": false },
-      "May":       { "district": 34, "schools": [21,7,2,2],    "categories":{"BAP":0,"BESO":4,"BSC":13,"BSO":8,"RB":9},  "flagged": false },
-      "June":      { "district": 33, "schools": [5,16,9,3],    "categories":{"BAP":1,"BESO":1,"BSC":19,"BSO":5,"RB":7},  "flagged": true }
-    },
     "26-27": {
-      "August": { "district": 32, "schools": [6,5,2,19], "categories":{"BAP":2,"BESO":3,"BSC":7,"BSO":13,"RB":7}, "flagged": false }
+      "August": {
+        "district": 32,
+        "schools": [
+          6,
+          5,
+          2,
+          19
+        ],
+        "categories": {
+          "BAP": 2,
+          "BESO": 3,
+          "BSC": 7,
+          "BSO": 13,
+          "RB": 7
+        },
+        "flagged": false
+      }
+    },
+    "25-26": {
+      "August": {
+        "district": 22,
+        "schools": [
+          0,
+          12,
+          1,
+          11
+        ],
+        "categories": {
+          "BAP": 0,
+          "BESO": 0,
+          "BSC": 15,
+          "BSO": 6,
+          "RB": 1
+        },
+        "flagged": false
+      },
+      "September": {
+        "district": 63,
+        "schools": [
+          18,
+          12,
+          20,
+          25
+        ],
+        "categories": {
+          "BAP": 8,
+          "BESO": 0,
+          "BSC": 25,
+          "BSO": 3,
+          "RB": 27
+        },
+        "flagged": false
+      },
+      "October": {
+        "district": 90,
+        "schools": [
+          28,
+          46,
+          39,
+          58
+        ],
+        "categories": {
+          "BAP": 13,
+          "BESO": 3,
+          "BSC": 30,
+          "BSO": 15,
+          "RB": 29
+        },
+        "flagged": false
+      },
+      "November": {
+        "district": 56,
+        "schools": [
+          15,
+          12,
+          14,
+          15
+        ],
+        "categories": {
+          "BAP": 8,
+          "BESO": 1,
+          "BSC": 21,
+          "BSO": 10,
+          "RB": 16
+        },
+        "flagged": false
+      },
+      "December": {
+        "district": 21,
+        "schools": [
+          4,
+          5,
+          3,
+          9
+        ],
+        "categories": {
+          "BAP": 0,
+          "BESO": 1,
+          "BSC": 10,
+          "BSO": 5,
+          "RB": 5
+        },
+        "flagged": true
+      },
+      "January": {
+        "district": 20,
+        "schools": [
+          1,
+          8,
+          7,
+          3
+        ],
+        "categories": {
+          "BAP": 0,
+          "BESO": 2,
+          "BSC": 5,
+          "BSO": 3,
+          "RB": 10
+        },
+        "flagged": false
+      },
+      "February": {
+        "district": 42,
+        "schools": [
+          6,
+          6,
+          14,
+          16
+        ],
+        "categories": {
+          "BAP": 4,
+          "BESO": 1,
+          "BSC": 11,
+          "BSO": 8,
+          "RB": 18
+        },
+        "flagged": false
+      },
+      "March": {
+        "district": 45,
+        "schools": [
+          8,
+          15,
+          11,
+          12
+        ],
+        "categories": {
+          "BAP": 3,
+          "BESO": 6,
+          "BSC": 11,
+          "BSO": 15,
+          "RB": 10
+        },
+        "flagged": false
+      },
+      "April": {
+        "district": 36,
+        "schools": [
+          8,
+          4,
+          7,
+          17
+        ],
+        "categories": {
+          "BAP": 0,
+          "BESO": 4,
+          "BSC": 14,
+          "BSO": 4,
+          "RB": 14
+        },
+        "flagged": false
+      },
+      "May": {
+        "district": 34,
+        "schools": [
+          21,
+          7,
+          2,
+          2
+        ],
+        "categories": {
+          "BAP": 0,
+          "BESO": 4,
+          "BSC": 13,
+          "BSO": 8,
+          "RB": 9
+        },
+        "flagged": false
+      },
+      "June": {
+        "district": 33,
+        "schools": [
+          5,
+          16,
+          9,
+          3
+        ],
+        "categories": {
+          "BAP": 1,
+          "BESO": 1,
+          "BSC": 19,
+          "BSO": 5,
+          "RB": 7
+        },
+        "flagged": true
+      }
     }
   }
 }
