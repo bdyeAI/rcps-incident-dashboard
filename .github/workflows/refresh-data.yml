@@ -1,0 +1,40 @@
+name: Refresh incident dashboard data
+
+on:
+  schedule:
+    # Runs every night at 6am UTC (about 1-2am Eastern). Adjust as needed.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Refresh data.json from Google Drive
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          DRIVE_FOLDER_ID_THIS_YEAR: ${{ vars.DRIVE_FOLDER_ID_THIS_YEAR }}
+          DRIVE_FOLDER_ID_LAST_YEAR: ${{ vars.DRIVE_FOLDER_ID_LAST_YEAR }}
+        run: python scripts/refresh_data.py
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "Automated data refresh"
+          git push
