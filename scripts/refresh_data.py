@@ -103,13 +103,13 @@ def parse_incidents_sheet(wb):
                 break
 
             matched_category = False
-            for key in CATEGORY_KEYS:
-                if label.startswith(key):
-                    nums = [c for c in row[i + 1:] if isinstance(c, (int, float))]
-                    if nums:
-                        categories[key] = int(nums[0])
-                    matched_category = True
-                    break
+            category_match = re.match(r'^\(?(BAP|BESO|BSC|BSO|RB)\)?', label)
+            if category_match:
+                key = category_match.group(1)
+                nums = [c for c in row[i + 1:] if isinstance(c, (int, float))]
+                if nums:
+                    categories[key] = int(nums[0])
+                matched_category = True
             if matched_category:
                 break
 
