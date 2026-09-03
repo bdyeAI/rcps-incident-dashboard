@@ -18,7 +18,7 @@
     "May",
     "June"
   ],
-  "lastUpdated": "2026-09-03T16:32:58.522227+00:00",
+  "lastUpdated": "2026-09-03T17:15:11.107210+00:00",
   "years": {
     "26-27": {
       "August": {
@@ -29,7 +29,13 @@
           2,
           19
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 2,
+          "BESO": 3,
+          "BSC": 7,
+          "BSO": 13,
+          "RB": 7
+        },
         "flagged": false
       },
       "June": {
@@ -40,7 +46,13 @@
           9,
           3
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 1,
+          "BESO": 1,
+          "BSC": 19,
+          "BSO": 5,
+          "RB": 7
+        },
         "flagged": false
       }
     },
@@ -53,7 +65,13 @@
           1,
           11
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 0,
+          "BESO": 0,
+          "BSC": 15,
+          "BSO": 6,
+          "RB": 1
+        },
         "flagged": false
       },
       "September": {
@@ -64,7 +82,13 @@
           20,
           25
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 8,
+          "BESO": 0,
+          "BSC": 25,
+          "BSO": 3,
+          "RB": 27
+        },
         "flagged": false
       },
       "October": {
@@ -75,7 +99,13 @@
           39,
           58
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 13,
+          "BESO": 3,
+          "BSC": 30,
+          "BSO": 15,
+          "RB": 29
+        },
         "flagged": false
       },
       "November": {
@@ -86,7 +116,13 @@
           14,
           15
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 8,
+          "BESO": 1,
+          "BSC": 21,
+          "BSO": 10,
+          "RB": 16
+        },
         "flagged": false
       },
       "December": {
@@ -97,7 +133,13 @@
           3,
           9
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 0,
+          "BESO": 1,
+          "BSC": 10,
+          "BSO": 5,
+          "RB": 5
+        },
         "flagged": true
       },
       "January": {
@@ -108,7 +150,13 @@
           7,
           3
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 0,
+          "BESO": 2,
+          "BSC": 5,
+          "BSO": 3,
+          "RB": 10
+        },
         "flagged": false
       },
       "February": {
@@ -119,7 +167,13 @@
           14,
           16
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 4,
+          "BESO": 1,
+          "BSC": 11,
+          "BSO": 8,
+          "RB": 18
+        },
         "flagged": false
       },
       "March": {
@@ -130,7 +184,13 @@
           11,
           12
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 3,
+          "BESO": 6,
+          "BSC": 11,
+          "BSO": 15,
+          "RB": 10
+        },
         "flagged": false
       },
       "April": {
@@ -141,7 +201,13 @@
           7,
           17
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 0,
+          "BESO": 4,
+          "BSC": 14,
+          "BSO": 4,
+          "RB": 14
+        },
         "flagged": false
       },
       "May": {
@@ -152,7 +218,13 @@
           2,
           2
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 0,
+          "BESO": 4,
+          "BSC": 13,
+          "BSO": 8,
+          "RB": 9
+        },
         "flagged": false
       },
       "June": {
@@ -163,7 +235,13 @@
           9,
           3
         ],
-        "categories": {},
+        "categories": {
+          "BAP": 1,
+          "BESO": 1,
+          "BSC": 19,
+          "BSO": 5,
+          "RB": 7
+        },
         "flagged": true
       }
     }
