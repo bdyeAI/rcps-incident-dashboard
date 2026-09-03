@@ -67,38 +67,51 @@ def download_xlsx(service, file_id):
 
 
 def parse_incidents_sheet(wb):
-    """Parses the 'Incidents' sheet's Total: and School Total Incidents: rows."""
+    """Parses the 'Incidents' sheet's Total:, category, and School Total Incidents: rows.
+
+    IMPORTANT: labels are NOT always in column A. The "School Total Incidents:" row in
+    particular is indented several columns in. So instead of assuming row[0] is the
+    label, we scan every cell in the row for a matching label, then read the numeric
+    values that follow it in that same row.
+    """
     ws = wb["Incidents"] if "Incidents" in wb.sheetnames else wb.worksheets[0]
     district_total = None
     school_totals = None
     categories = {}
-    current_category = None
 
     for row in ws.iter_rows(values_only=True):
-        if not row or row[0] is None:
+        if not row:
             continue
-        label = str(row[0]).strip()
 
-        if label in CATEGORY_KEYS or any(label.startswith(k) for k in CATEGORY_KEYS):
-            # first numeric cell after the category label is "Total Incidents" for that category
+        for i, cell in enumerate(row):
+            if cell is None:
+                continue
+            label = str(cell).strip()
+            if not label:
+                continue
+
+            if label.startswith("Total:"):
+                nums = [c for c in row[i + 1:] if isinstance(c, (int, float))]
+                if nums:
+                    district_total = int(nums[0])
+                break
+
+            if "School Total Incidents" in label:
+                nums = [int(c) for c in row[i + 1:] if isinstance(c, (int, float))]
+                if len(nums) >= 4:
+                    school_totals = nums[:4]
+                break
+
+            matched_category = False
             for key in CATEGORY_KEYS:
                 if label.startswith(key):
-                    for cell in row[1:]:
-                        if isinstance(cell, (int, float)):
-                            categories[key] = int(cell)
-                            break
+                    nums = [c for c in row[i + 1:] if isinstance(c, (int, float))]
+                    if nums:
+                        categories[key] = int(nums[0])
+                    matched_category = True
                     break
-
-        if label.startswith("Total:"):
-            for cell in row[1:]:
-                if isinstance(cell, (int, float)):
-                    district_total = int(cell)
-                    break
-
-        if "School Total Incidents" in label:
-            nums = [int(c) for c in row[1:] if isinstance(c, (int, float))]
-            if len(nums) >= 4:
-                school_totals = nums[:4]
+            if matched_category:
+                break
 
     return district_total, school_totals, categories
 
