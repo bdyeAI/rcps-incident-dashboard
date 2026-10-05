@@ -26,7 +26,9 @@ from google.oauth2 import service_account
 import openpyxl
 
 SCHOOLS = ["McHarg Elementary", "Belle Heth Elementary", "Dalton Intermediate", "Radford High"]
-MONTHS = ["August","September","October","November","December","January","February","March","April","May","June"]
+# June and July are intentionally not tracked by this dashboard.
+MONTHS = ["August","September","October","November","December","January","February","March","April","May"]
+EXCLUDED_MONTHS = {"June", "July"}
 CATEGORY_KEYS = ["BAP", "BESO", "BSC", "BSO", "RB"]
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
@@ -126,13 +128,17 @@ def find_month_workbook(service, month_folder_id, year_label, month_name):
 
 
 def find_month_folders(service, year_folder_id):
-    """Maps month name -> folder id, matching folder names like '1. August'."""
+    """Maps month name -> folder id, matching folder names like '1. August'.
+    Skips June/July even if such folders exist in Drive -- this dashboard
+    intentionally doesn't track those months."""
     children = list_children(service, year_folder_id)
     mapping = {}
     for f in children:
         if f["mimeType"] != "application/vnd.google-apps.folder":
             continue
         for month in MONTHS:
+            if month in EXCLUDED_MONTHS:
+                continue
             if month.lower() in f["name"].lower():
                 mapping[month] = f["id"]
     return mapping
@@ -161,6 +167,11 @@ def build_year_data(service, year_folder_id, year_label, existing=None):
             "categories": categories,
             "flagged": data.get(month, {}).get("flagged", False),  # preserve manual flags
         }
+
+    # Drop any excluded months that might be lingering from before this exclusion existed.
+    for excluded in EXCLUDED_MONTHS:
+        data.pop(excluded, None)
+
     return data
 
 
