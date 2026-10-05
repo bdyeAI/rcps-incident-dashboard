@@ -15,7 +15,7 @@
     "February",
     "March",
     "April",
-    "May",
+    "May"
   ],
   "lastUpdated": "2026-10-05T13:25:51.479930+00:00",
   "years": {
@@ -37,7 +37,6 @@
         },
         "flagged": false
       },
-    },
       "September": {
         "district": 42,
         "schools": [
