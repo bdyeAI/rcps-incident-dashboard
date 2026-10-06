@@ -17,7 +17,7 @@
     "April",
     "May"
   ],
-  "lastUpdated": "2026-10-05T13:25:51.479930+00:00",
+  "lastUpdated": "2026-10-06T12:44:34.330049+00:00",
   "years": {
     "26-27": {
       "August": {
@@ -225,23 +225,6 @@
           "RB": 9
         },
         "flagged": false
-      },
-      "June": {
-        "district": 33,
-        "schools": [
-          5,
-          16,
-          9,
-          3
-        ],
-        "categories": {
-          "BAP": 1,
-          "BESO": 1,
-          "BSC": 19,
-          "BSO": 5,
-          "RB": 7
-        },
-        "flagged": true
       }
     }
   }
